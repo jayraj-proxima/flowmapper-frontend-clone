@@ -27,6 +27,11 @@ body {
   padding: 64px 16px;
       }
 
+.container-pricing {
+max-width: 1120px;
+margin: 0 auto;
+}  
+
 /* HEADER (Shared) */
 
 header, .header {
@@ -391,9 +396,13 @@ footer p,
 }
 
 .contact-container {
-  max-width: 620px;
-  margin: 0 auto;
+  max-width: 700px;
+  margin: auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
 }
+
 
 .main-heading {
   text-align: center;
@@ -426,9 +435,12 @@ footer p,
   margin-bottom: 20px;
 }
 
+
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  width: 100%;
 }
+
 
 .form-group label {
   display: block;
@@ -477,7 +489,7 @@ footer p,
 }
 
 .country-code {
-  width: 110px;
+  width: 140px;
   padding: 12px;
   border: 1px solid #d1d1d6;
   border-radius: 8px;
@@ -921,3 +933,4 @@ h1 {
                 gap: 20px;
             }
         }
+

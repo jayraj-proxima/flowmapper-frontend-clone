@@ -1,189 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FAQ - flowmapper.ai</title>
-  <meta name="description" content="Learn more about flowmapper.ai — an AI-powered platform for turning ideas into diagrams.">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - flowmapper.ai</title>
+    <meta name="description" content="Learn more about flowmapper.ai — an AI-powered platform for turning ideas into diagrams.">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Link CSS -->
-  <link rel="stylesheet" href="assets/css/styles.css">
-</head>
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+  </head>
 
-<body>
-  <!-- Header -->
-  <header class="header">
-    <div class="header-container">
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="header-container">
 
-      <!-- Logo -->
-      <div class="logo">
-        <img src="assets/images/logo.png" alt="Logo">
+        <!-- Logo -->
+        <div class="logo">
+          <img src="assets/images/logo.png" alt="Logo">
+        </div>
+
+        <!-- Navigation -->
+        <nav class="nav">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="pricing.html" class="nav-link">Pricing</a>
+          <a href="contact.html" class="nav-link">Contact Us</a>
+          <a href="faq.html" class="nav-link active">FAQ</a>
+        </nav>
+
+        <div class="header-actions"></div>
+      </div>
+    </header>
+
+    <!-- About Content -->
+    <div class="container">
+        <div class="header2">
+          <h1>Frequently Asked Questions</h1>
+          <p class="subtitle">Everything you need to know about flowmapper.ai</p>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-button" onclick="toggleFAQ(this)">
+              <span class="faq-question">What is a Mind Map?</span>
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                A visual representation of ideas and concepts for defining a process or solving a problem.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-button" onclick="toggleFAQ(this)">
+              <span class="faq-question">What is a flowmapper.ai?</span>
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                flowmapper.ai is a smart and powerful AI-based Mind Map tool designed by Proxima systems
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-button" onclick="toggleFAQ(this)">
+              <span class="faq-question">Can I have a trial version of the flowmapper.ai?</span>
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                Yes, you can create a trial version of the flowmapper.ai and access it for 15 days for free.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-button" onclick="toggleFAQ(this)">
+              <span class="faq-question">What does the 'I have more details' checkbox indicate?</span>
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                You can select the 'I have more details' checkbox to add more details on your idea or problem. You can elaborate on your requirements to get more accurate results while generating the Mind Map.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-button" onclick="toggleFAQ(this)">
+              <span class="faq-question">How do I create a Mind Map using flowmapper.ai?</span>
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                Log in to your account. Click Get Started and then click + Create New. Enter the required keywords on the subject for which you want to create a Mind Map and click Submit.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-button" onclick="toggleFAQ(this)">
+              <span class="faq-question">What are the various ways in which you can create a Mind Map from flowmapper.ai?</span>
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                There are two ways (Data Driven and JSON) in which you can provide the input to generate Mind Map.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-button" onclick="toggleFAQ(this)">
+              <span class="faq-question">What if I face any issue, how to reach support team?</span>
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                Please write email to support@flowmapper.ai, soon we are going to add online chat support.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-button" onclick="toggleFAQ(this)">
+              <span class="faq-question">How do I sign up for flowmapper.ai?</span>
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                Access the Sign-Up page. Click the Sign-Up link, enter the email address, create a password and click Sign Up. Enter the Address and Contact Details to access flowmapper.ai.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="support-card">
+          <h2>Still have questions?</h2>
+          <p>Can't find the answer you're looking for? Please reach out to our support team.</p>
+          <a href="mailto:support@proximabiz.com" class="support-link">
+            <svg class="mail-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+            support@proximabiz.com
+          </a>
+        </div>
       </div>
 
-      <!-- Navigation -->
-      <nav class="nav">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="pricing.html" class="nav-link">Pricing</a>
-        <a href="contact.html" class="nav-link">Contact Us</a>
-        <a href="faq.html" class="nav-link active">FAQ</a>
-      </nav>
+      <script>
+        function toggleFAQ(button) {
+          const faqItem = button.parentElement;
+          faqItem.classList.toggle('open');
+        }
+      </script>
 
-      <div></div>
-    </div>
-  </header>
 
-  <!-- About Content -->
-  <div class="container">
-      <div class="header2">
-        <h1>Frequently Asked Questions</h1>
-        <p class="subtitle">Everything you need to know about flowmapper.ai</p>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <p>© 2025 flowmapper.ai. All Rights Reserved.</p>
       </div>
-
-      <div class="faq-list">
-        <div class="faq-item">
-          <button class="faq-button" onclick="toggleFAQ(this)">
-            <span class="faq-question">What is a Mind Map?</span>
-            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-content">
-              A visual representation of ideas and concepts for defining a process or solving a problem.
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-button" onclick="toggleFAQ(this)">
-            <span class="faq-question">What is a flowmapper.ai?</span>
-            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-content">
-              flowmapper.ai is a smart and powerful AI-based Mind Map tool designed by Proxima systems
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-button" onclick="toggleFAQ(this)">
-            <span class="faq-question">Can I have a trial version of the flowmapper.ai?</span>
-            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-content">
-              Yes, you can create a trial version of the flowmapper.ai and access it for 15 days for free.
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-button" onclick="toggleFAQ(this)">
-            <span class="faq-question">What does the 'I have more details' checkbox indicate?</span>
-            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-content">
-              You can select the 'I have more details' checkbox to add more details on your idea or problem. You can elaborate on your requirements to get more accurate results while generating the Mind Map.
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-button" onclick="toggleFAQ(this)">
-            <span class="faq-question">How do I create a Mind Map using flowmapper.ai?</span>
-            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-content">
-              Log in to your account. Click Get Started and then click + Create New. Enter the required keywords on the subject for which you want to create a Mind Map and click Submit.
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-button" onclick="toggleFAQ(this)">
-            <span class="faq-question">What are the various ways in which you can create a Mind Map from flowmapper.ai?</span>
-            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-content">
-              There are two ways (Data Driven and JSON) in which you can provide the input to generate Mind Map.
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-button" onclick="toggleFAQ(this)">
-            <span class="faq-question">What if I face any issue, how to reach support team?</span>
-            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-content">
-              Please write email to support@flowmapper.ai, soon we are going to add online chat support.
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-button" onclick="toggleFAQ(this)">
-            <span class="faq-question">How do I sign up for flowmapper.ai?</span>
-            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-content">
-              Access the Sign-Up page. Click the Sign-Up link, enter the email address, create a password and click Sign Up. Enter the Address and Contact Details to access flowmapper.ai.
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="support-card">
-        <h2>Still have questions?</h2>
-        <p>Can't find the answer you're looking for? Please reach out to our support team.</p>
-        <a href="#" class="support-link">
-          <svg class="mail-icon" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-          </svg>
-          support@flowmapper.ai
-        </a>
-      </div>
-    </div>
-
-    <script>
-      function toggleFAQ(button) {
-        const faqItem = button.parentElement;
-        faqItem.classList.toggle('open');
-      }
-    </script>
-
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-container">
-      <p>© 2025 flowmapper.ai. All Rights Reserved.</p>
-    </div>
-  </footer>
-
-</body>
+    </footer>
+  </body>
 </html>
