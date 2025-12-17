@@ -282,11 +282,11 @@ h1 {
   transform: scale(1.02);
 }
 
-.cta-btn.disabled {
+/* .cta-btn.disabled {
   background-color: #d2d2d7;
   color: #86868b;
   cursor: not-allowed;
-}
+} */
 
 /* Features */
 .features h3 {
