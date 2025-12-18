@@ -1,57 +1,92 @@
-const prices = {
-  IN: {
-    currency: "₹",
-    monthly: { basic: 362.64, premium: 725.29 },
-    annually: { basic: 362.64 * 11, premium: 725.29 * 11 }
+// ================= CENTRALIZED USD PRICES =================
+const BASE_MONTHLY_USD = {
+  basic: 4,
+  premium: 8
+};
+
+const ANNUAL_MULTIPLIER = 11;
+
+const USD_PRICES = {
+  monthly: {
+    basic: BASE_MONTHLY_USD.basic,
+    premium: BASE_MONTHLY_USD.premium
   },
-  US: {
-    currency: "$",
-    monthly: { basic: 4.00, premium: 8.00 },
-    annually: { basic: 4.00 * 11, premium: 8.00 * 11 }
+  annually: {
+    basic: BASE_MONTHLY_USD.basic * ANNUAL_MULTIPLIER,
+    premium: BASE_MONTHLY_USD.premium * ANNUAL_MULTIPLIER
   }
 };
 
 let currentPeriod = "monthly";
-let currentCountry = "IN";
+let currentCountry = "US";
+let usdToInrRate = null;
 
-// Cache DOM elements
+// ================= DOM ELEMENTS =================
 const toggleButtons = document.querySelectorAll(".toggle-btn");
 const countrySelect = document.getElementById("countrySelect");
-const mindmapLimits = document.querySelectorAll(".mindmap-limit");
 const currencyEls = document.querySelectorAll(".currency");
 const periodEls = document.querySelectorAll(".period");
+const mindmapLimits = document.querySelectorAll(".mindmap-limit");
 
 const basicPriceEl = document.querySelector('[data-plan="basic"]');
 const premiumPriceEl = document.querySelector('[data-plan="premium"]');
 
-function updatePrices() {
-  const { currency, [currentPeriod]: periodPrices } = prices[currentCountry];
+// ================= EXCHANGE RATE =================
+async function fetchUsdToInrRate() {
+  if (usdToInrRate) return usdToInrRate;
 
-  // Update currency
-  currencyEls.forEach(el => el.textContent = currency);
+  try {
+    const res = await fetch(
+      "https://api.frankfurter.app/latest?from=USD&to=INR"
+    );
+    const data = await res.json();
+    usdToInrRate = data.rates.INR;
+    return usdToInrRate;
+  } catch (err) {
+    console.error("Exchange rate fetch failed", err);
+    return 83; // fallback
+  }
+}
 
-  // Update prices
-  basicPriceEl.textContent = periodPrices.basic.toFixed(2);
-  premiumPriceEl.textContent = periodPrices.premium.toFixed(2);
+// ================= UPDATE UI =================
+async function updatePrices() {
+  let multiplier = 1;
+  let currency = "$";
 
-  // Update period text
+  if (currentCountry === "IN") {
+    multiplier = await fetchUsdToInrRate();
+    currency = "₹";
+  }
+
+  const basePrices = USD_PRICES[currentPeriod];
+
+  // Prices
+  basicPriceEl.textContent = (basePrices.basic * multiplier).toFixed(2);
+  premiumPriceEl.textContent = (basePrices.premium * multiplier).toFixed(2);
+
+  // Currency symbol
+  currencyEls.forEach(el => (el.textContent = currency));
+
+  // Period text
   periodEls.forEach(el => {
     el.textContent = currentPeriod === "monthly" ? "/month" : "/year";
   });
 
-  // Update mindmap limits
+  // Mindmap limit text
   mindmapLimits.forEach(item => {
     item.textContent = item.dataset[currentPeriod];
   });
 }
 
-// Toggle buttons
-toggleButtons.forEach(button => {
-  button.addEventListener("click", () => {
-    toggleButtons.forEach(btn => btn.classList.remove("active"));
-    button.classList.add("active");
+// ================= EVENTS =================
 
-    currentPeriod = button.dataset.period;
+// Monthly / Annual toggle
+toggleButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    toggleButtons.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    currentPeriod = btn.dataset.period;
     updatePrices();
   });
 });
@@ -62,5 +97,5 @@ countrySelect.addEventListener("change", e => {
   updatePrices();
 });
 
-// Initial load
+// ================= INITIAL LOAD =================
 updatePrices();
